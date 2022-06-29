@@ -1,18 +1,31 @@
 plugins {
     id 'java'
+    id "com.github.erdi.webdriver-binaries" version "2.7"
 }
 
 repositories {
     mavenCentral()
+    mavenLocal()
+}
+
+webdriverBinaries {
+    chromedriver {
+        version = '2.42.0'
+        fallbackTo32Bit = true
+    }
+    downloadRoot new File('src/test/resources')
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
 }
 
 dependencies {
-    implementation project(":")
+    implementation  'org.testng:testng:7.1.0'
+    implementation  'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor  'org.projectlombok:lombok:1.18.24'
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
-    implementation "org.slf4j:slf4j-api:1.7.25"
-    implementation "org.slf4j:slf4j-simple:1.7.25"
-}
-
-test {
-    useJUnitPlatform()
+    implementation  "org.slf4j:slf4j-simple:1.7.28"
 }

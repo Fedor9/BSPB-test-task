@@ -1,4 +1,4 @@
-rootProject.name = 'TestTask_BSPB'
+rootProject.name = 'TestTaskBSPB'
 include 'Petshop'
 include 'BankingProject'
 

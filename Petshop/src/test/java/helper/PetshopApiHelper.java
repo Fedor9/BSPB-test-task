@@ -44,7 +44,7 @@ public class PetshopApiHelper {
     public static JsonPath getPetsByStatus(PetStatus... statuses) {
         return given()
                 .spec(requestSpecification)
-                .queryParam("status", statuses)
+                .queryParam("status", (Object[])statuses)
                 .expect()
                 .statusCode(200)
                 .then()

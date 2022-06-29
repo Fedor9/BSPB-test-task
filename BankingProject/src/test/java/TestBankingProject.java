@@ -16,7 +16,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Random;
+import java.util.stream.Stream;
 
 @Slf4j
 public class TestBankingProject {
@@ -32,11 +37,21 @@ public class TestBankingProject {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        String chromedriverPath;
+        try (Stream<Path> walk = Files.walk(Paths.get("src/test/resources/"))) {
+            chromedriverPath = walk
+                    .filter(p -> !Files.isDirectory(p))
+                    .map(p -> p.toString().toLowerCase())
+                    .filter(f -> f.endsWith("chromedriver.exe"))
+                    .findFirst().get();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.setProperty("webdriver.chrome.driver", chromedriverPath);
         webDriver = new ChromeDriver(new ChromeOptions().addArguments("--incognito").addArguments("--start-maximized"));
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void tearUp() {
         webDriver.close();
     }
@@ -72,7 +87,7 @@ public class TestBankingProject {
             log.info("completed 'createClient' test");
         } catch (Throwable throwable) {
             File screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-            screenshot.renameTo(new File("src/test/screenshot_"+ new Random().nextInt(5000)+ ".png"));
+            screenshot.renameTo(new File("src/test/screenshot_" + new Random().nextInt(5000) + ".png"));
             Assert.fail(String.format("Unexpected error: %s", throwable.getMessage()));
         }
     }
@@ -106,7 +121,7 @@ public class TestBankingProject {
             log.info("completed 'openAccountForClient' test");
         } catch (Throwable throwable) {
             File screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-            screenshot.renameTo(new File("src/test/screenshot_"+ new Random().nextInt(5000)+ ".png"));
+            screenshot.renameTo(new File("src/test/screenshot_" + new Random().nextInt(5000) + ".png"));
             Assert.fail(String.format("Unexpected error: %s", throwable.getMessage()));
         }
     }
