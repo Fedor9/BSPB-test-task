@@ -10,11 +10,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.util.Random;
 
 @Slf4j
 public class TestBankingProject {
@@ -69,9 +71,9 @@ public class TestBankingProject {
             webDriverWait.until(ExpectedConditions.alertIsPresent()).accept();
             log.info("completed 'createClient' test");
         } catch (Throwable throwable) {
-            log.info(String.format("Unexpected error: %s", throwable.getMessage()));
             File screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-            screenshot.renameTo(new File("src/test/screenshots"));
+            screenshot.renameTo(new File("src/test/screenshots/screenshot_"+ new Random().nextInt(5000)+ ".png"));
+            Assert.fail(String.format("Unexpected error: %s", throwable.getMessage()));
         }
     }
 
@@ -103,9 +105,9 @@ public class TestBankingProject {
             webDriverWait.until(ExpectedConditions.alertIsPresent()).accept();
             log.info("completed 'openAccountForClient' test");
         } catch (Throwable throwable) {
-            log.info(String.format("Unexpected error: %s", throwable.getMessage()));
             File screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-            screenshot.renameTo(new File("src/test/screenshots"));
+            screenshot.renameTo(new File("src/test/screenshots/screenshot_"+ new Random().nextInt(5000)+ ".png"));
+            Assert.fail(String.format("Unexpected error: %s", throwable.getMessage()));
         }
     }
 }
