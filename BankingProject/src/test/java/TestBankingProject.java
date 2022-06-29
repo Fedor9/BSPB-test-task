@@ -72,7 +72,7 @@ public class TestBankingProject {
             log.info("completed 'createClient' test");
         } catch (Throwable throwable) {
             File screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-            screenshot.renameTo(new File("src/test/screenshots/screenshot_"+ new Random().nextInt(5000)+ ".png"));
+            screenshot.renameTo(new File("src/test/screenshot_"+ new Random().nextInt(5000)+ ".png"));
             Assert.fail(String.format("Unexpected error: %s", throwable.getMessage()));
         }
     }
@@ -106,7 +106,7 @@ public class TestBankingProject {
             log.info("completed 'openAccountForClient' test");
         } catch (Throwable throwable) {
             File screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-            screenshot.renameTo(new File("src/test/screenshots/screenshot_"+ new Random().nextInt(5000)+ ".png"));
+            screenshot.renameTo(new File("src/test/screenshot_"+ new Random().nextInt(5000)+ ".png"));
             Assert.fail(String.format("Unexpected error: %s", throwable.getMessage()));
         }
     }
