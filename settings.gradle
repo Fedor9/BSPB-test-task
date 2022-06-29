@@ -1,0 +1,4 @@
+rootProject.name = 'TestTask_BSPB'
+include 'Petshop'
+include 'BankingProject'
+
