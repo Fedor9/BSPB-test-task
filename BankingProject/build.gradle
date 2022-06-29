@@ -2,15 +2,15 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-
+    implementation project(":")
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation "org.slf4j:slf4j-api:1.7.25"
+    implementation "org.slf4j:slf4j-simple:1.7.25"
 }
 
 test {

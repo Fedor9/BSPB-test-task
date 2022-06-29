@@ -7,8 +7,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.testng:testng:7.1.0'
-    implementation 'org.projectlombok:lombok:1.18.22'
+    implementation project(":")
     testImplementation 'io.rest-assured:rest-assured:5.1.1'
     testImplementation 'com.fasterxml.jackson.core:jackson-core:2.8.6'
     testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
