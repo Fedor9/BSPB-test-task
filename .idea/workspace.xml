@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="add1662a-d2d0-4786-b63f-c9333c12ec2d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BankingProject/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/BankingProject/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankingProject/src/test/java/TestBankingProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingProject/src/test/java/TestBankingProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankingProject/src/test/resources/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Petshop/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Petshop/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Petshop/src/test/java/TestPetshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/Petshop/src/test/java/TestPetshop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Petshop/src/test/java/helper/PetshopApiHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Petshop/src/test/java/helper/PetshopApiHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Petshop/src/test/java/model/PetCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Petshop/src/test/java/model/PetCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    <list default="true" id="add1662a-d2d0-4786-b63f-c9333c12ec2d" name="Changes" comment="update gradle dependencies and minor tests updates">
+      <change beforePath="$PROJECT_DIR$/BankingProject/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Petshop/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656508446281</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update gradle dependencies and minor tests updates">
+      <created>1656516843736</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656516843736</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -300,19 +301,20 @@
     <MESSAGE value="Update dependencies" />
     <MESSAGE value="Selenium tests for 'Banking project'" />
     <MESSAGE value="updated Selenium tests for 'Banking project' with saving screenshot of page with error\exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated Selenium tests for 'Banking project' with saving screenshot of page with error\exception" />
+    <MESSAGE value="update gradle dependencies and minor tests updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="update gradle dependencies and minor tests updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Petshop/src/test/java/TestPetshop.java</url>
-          <line>19</line>
+          <line>18</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Petshop/src/test/java/TestPetshop.java</url>
-          <line>25</line>
+          <line>24</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
